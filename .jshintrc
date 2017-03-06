@@ -1,0 +1,15 @@
+{
+  "esversion": 6,
+  "browser": true,
+  "jquery": true,
+  "node": true,
+  "globals": {
+    "__IS_DEV__": true,
+    "DEBUG": true
+  },
+  "maxparams"     : 4,     // {int} Max number of formal params allowed per function
+  "maxdepth"      : 5,     // {int} Max depth of nested blocks (within functions)
+  "maxstatements" : 10,    // {int} Max number statements per function
+  "maxcomplexity" : 10,    // {int} Max cyclomatic complexity per function
+  "varstmt"       : true   // true: Disallow any var statements. Only `let` and `const` are allowed.
+}
