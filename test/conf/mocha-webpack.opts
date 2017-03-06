@@ -1,0 +1,4 @@
+--webpack-config webpack.test.js
+--reporter spec
+--colors
+test/**/*.spec.js

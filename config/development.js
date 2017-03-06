@@ -19,7 +19,7 @@ module.exports = (envConfig) => {
       ]
     },
     devServer: {
-      contentBase: envConfig.PATHS.rootDir,
+      contentBase: envConfig.PATHS.srcDir,
       watchContentBase: true,
       hot: true,
       host: '0.0.0.0',

@@ -16,6 +16,10 @@ Features
 - Webpack-dev-server 2
 - redux-devtools, redux-thunk & redux-logger
 
+### Test
+- mocha
+- chai
+
 Requirements
 ------------
 - node: latest
@@ -26,10 +30,21 @@ Install [yarn](https://yarnpkg.com/lang/en/docs/install/#mac-tab)
  
  > cd _dir_ 
  
- > yarn // or npm install
+ > yarn 
+ 
+ or alternatively `npm install`
  
 Usage 
  
+ Launch local dev server
  > npm start
+ 
+ Launch test
+ > npm test
+ 
+ Launch test in watch mode
+ > npm test -- --watch
+ 
+ Create a final build
  > npm build
  
