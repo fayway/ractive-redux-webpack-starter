@@ -1,4 +1,5 @@
 --webpack-config webpack.test.js
+--require test/conf/setup.js
 --recursive
 --reporter spec
 --colors
