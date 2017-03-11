@@ -1,4 +1,6 @@
 --webpack-config webpack.test.js
+--recursive
 --reporter spec
 --colors
+--growl
 test/**/*.spec.js

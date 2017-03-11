@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 const sinon = require('sinon');
+import { describe, beforeEach, afterEach, it } from 'mocha';
 
 import store from 'store/appStore';
 import { createIncrementAction, createDecrementAction } from 'modules/counter/actions';
