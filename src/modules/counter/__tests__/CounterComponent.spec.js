@@ -3,8 +3,8 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import Ractive from 'ractive';
 
-import CounterComponent from 'modules/counter/CounterComponent';
-import * as actions from 'modules/counter/actions';
+import CounterComponent from '../CounterComponent';
+import * as actions from '../actions';
 
 
 describe('Counter Component', () => {

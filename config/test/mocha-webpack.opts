@@ -1,7 +1,7 @@
 --webpack-config webpack.test.js
---require test/conf/setup.js
+--require config/test/withJsdom.js
 --recursive
 --reporter spec
 --colors
 --growl
-test/**/*.spec.js
+src/**/__tests__/**/*.spec.js

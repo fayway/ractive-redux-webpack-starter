@@ -4,6 +4,8 @@ import CounterComponent from 'modules/counter/CounterComponent';
 import 'hack/dist/hack.css';
 import 'hack/dist/dark.css';
 
+Ractive.DEBUG = __IS_DEV__;
+
 new Ractive({
   el: '#root',
   components: {

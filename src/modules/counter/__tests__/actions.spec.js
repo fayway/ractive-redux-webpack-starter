@@ -3,8 +3,8 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 
 import store from 'store/appStore';
-import { createIncrementAction, createDecrementAction } from 'modules/counter/actions';
-import { INCREMENT, DECREMENT } from 'modules/counter/constants';
+import { createIncrementAction, createDecrementAction } from '../actions';
+import { INCREMENT, DECREMENT } from '../constants';
 
 describe('Counter', () => {
   beforeEach(() => {
