@@ -26,10 +26,10 @@ export default Ractive.extend({
     });
   },
   inc(){
-    createIncrementAction();
+    store.dispatch(createIncrementAction());
   },
   dec(){
-    createDecrementAction();
+    store.dispatch(createDecrementAction());
   },
   onteardown() {
     this.storeUnsbscribe();
