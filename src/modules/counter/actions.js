@@ -1,10 +1,10 @@
-import store from 'store/appStore';
-import { INCREMENT, DECREMENT } from './constants';
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';
 
 export const createIncrementAction = () => {
-  store.dispatch({ type: INCREMENT});
+  return { type: INCREMENT};
 };
 
 export const createDecrementAction = () => {
-  store.dispatch({ type: DECREMENT});
+  return { type: DECREMENT};
 };

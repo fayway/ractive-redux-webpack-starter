@@ -4,4 +4,4 @@
 --reporter spec
 --colors
 --growl
-src/**/__tests__/**/*.spec.js
+src/**/*.spec.js

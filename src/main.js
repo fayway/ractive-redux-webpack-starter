@@ -1,5 +1,5 @@
 import Ractive from 'ractive';
-import CounterComponent from 'modules/counter/CounterComponent';
+import CounterComponent from 'modules/counter/Counter';
 
 import 'hack/dist/hack.css';
 import 'hack/dist/dark.css';
