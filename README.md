@@ -10,15 +10,16 @@ Features
 - jshint
 
 ### Module Bundle
-- Webpack 2
+- Webpack 2 & Webpack-dev-server 2
 
 ### Development
-- Webpack-dev-server 2
-- redux-devtools, redux-thunk & redux-logger
+- Ractive
+- redux with redux-devtools, redux-logger, redux-thunk, redux-persist
 
 ### Test
 - mocha
 - chai
+- istanbul code coverage 
 
 Requirements
 ------------
@@ -43,8 +44,11 @@ Usage
  > npm test
  
  Launch test in watch mode
- > npm test -- --watch
+ > npm run test:watch
  
+ Launch test with code coverage
+ > npm run cover
+  
  Create a final build
  > npm build
  

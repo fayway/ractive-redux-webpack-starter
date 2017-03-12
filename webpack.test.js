@@ -1,6 +1,8 @@
 const path = require('path');
+const process = require('process');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
+const isCoverage = process.env.NODE_ENV == 'coverage';
 
 module.exports = {
   output: {
@@ -19,9 +21,13 @@ module.exports = {
     }
   },
   module: {
-    rules: [
-      { test: /\.scss$/, use: 'null-loader' },
-      { test: /\.css$/, use: 'null-loader' },
+    loaders: [{
+        test: /\.js$/,
+        include: path.join(__dirname, 'src'),
+        exclude: /(.*\.spec\.js$)/,
+        loader: 'istanbul-instrumenter-loader',
+        query: {esModules: true}
+      }
     ]
   },
   plugins: [

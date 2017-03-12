@@ -4,4 +4,5 @@
 --reporter spec
 --colors
 --growl
+--full-trace
 src/**/*.spec.js
