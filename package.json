@@ -5,7 +5,7 @@
     "start": "npm run dev",
     "watch": "cross-env NODE_ENV=development webpack --config webpack.config.js --watch --progress",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js --profile --inline --progress --hot",
-    "build": "cross-env NODE_ENV=production webpack --config web/webpack.config.js -p",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js -p",
     "test": "cross-env NODE_ENV=test mocha-webpack --opts config/test/mocha-webpack.opts",
     "test:watch": "npm test -- --watch",
     "cover": "cross-env NODE_ENV=coverage nyc --reporter=lcov --reporter=text npm run test"
