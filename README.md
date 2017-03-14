@@ -14,7 +14,7 @@ Features
 
 ### Development
 - Ractive
-- redux with redux-devtools, redux-logger, redux-thunk, redux-persist
+- Redux with redux-devtools, redux-logger, redux-thunk, redux-persist
 
 ### Test
 - mocha
@@ -50,5 +50,5 @@ Usage
  > npm run cover
   
  Create a final build
- > npm build
+ > npm run build
  
