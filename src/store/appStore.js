@@ -18,11 +18,11 @@ const store = createStore(
   rootReducer,
   undefined,
   composeEnhancers(
-    applyMiddleware(...extensions)
-    // autoRehydrate()
+    applyMiddleware(...extensions),
+    autoRehydrate()
   )
 );
 //
-// if (window && window.sessionStorage) persistStore(store, {storage: asyncSessionStorage});
+if (window && window.sessionStorage) persistStore(store, {storage: asyncSessionStorage});
 //
 export default store;
