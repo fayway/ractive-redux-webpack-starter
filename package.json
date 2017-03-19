@@ -53,6 +53,7 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.8.1",
     "redux-persist": "^4.4.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "router5": "^4.5.1"
   }
 }

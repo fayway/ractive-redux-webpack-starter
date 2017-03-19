@@ -1,9 +1,10 @@
 import Ractive from 'ractive';
 import store from 'store/appStore';
-import { createIncrementAction, createDecrementAction } from './actions';
+import {createIncrementAction, createDecrementAction} from './actions';
 
 export default Ractive.extend({
   template: `
+    {{#if active}}
     <div class="card">
       <header class="card-header">Counter Module</header>
       <div class="card-content">
@@ -14,14 +15,22 @@ export default Ractive.extend({
         </div>
       </div>
     </div>
+    {{/if}}
     `,
   data(){
     return {
+      active: false,
       count: 0
     };
   },
   oninit() {
-    this.storeUnsbscribe = store.subscribe(()=>{
+    console.log('Counter Init');
+
+    this.observe('route', (route) => {
+      this.set('active', route && route.name.indexOf(this.get('routeNode')) === 0);
+    });
+
+    this.storeUnsbscribe = store.subscribe(() => {
       this.set('count', store.getState().counter);
     });
   },
@@ -30,6 +39,9 @@ export default Ractive.extend({
   },
   dec(){
     store.dispatch(createDecrementAction());
+  },
+  oncomplete() {
+    console.log('Counter Complete');
   },
   onteardown() {
     this.storeUnsbscribe();
