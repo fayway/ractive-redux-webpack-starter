@@ -1,23 +1,16 @@
 import Ractive from 'ractive';
 
 import createRouter from './createRouter';
-
-import CounterComponent from 'modules/counter/Counter';
-import AboutComponent from 'modules/about/About';
+import './NodeRoute';
 
 export default Ractive.extend({
-  components: {
-    CounterComponent,
-    AboutComponent
-  },
   data() {
     return {
       route: null
     };
   },
   template: `
-      <CounterComponent routeNode="home" route="{{route}}"></CounterComponent>
-      <AboutComponent routeNode="about" route="{{route}}"></AboutComponent>
+      {{>content}}
   `,
   oninit() {
     console.log('RouterProvider Init');

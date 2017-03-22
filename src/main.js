@@ -1,6 +1,8 @@
 import Ractive from 'ractive';
 import RouterProvider from 'modules/router/RouterProvider';
 import Menu from 'modules/router/Menu';
+import CounterComponent from 'modules/counter/Counter';
+import AboutComponent from 'modules/about/About';
 
 import routes from './routes';
 
@@ -13,7 +15,9 @@ new Ractive({
   el: '#root',
   components: {
     RouterProvider,
-    Menu
+    Menu,
+    CounterComponent,
+    AboutComponent
   },
   data() {
     return {
@@ -24,7 +28,10 @@ new Ractive({
     <div class="main container">
       <h1>Ractive Redux Sandbox</h1>
       <Menu></Menu>
-      <RouterProvider routes="{{routes}}"></RouterProvider>
+      <RouterProvider routes="{{routes}}">
+        <CounterComponent routeNode="home"></CounterComponent>
+        <AboutComponent routeNode="about"></AboutComponent>
+      </RouterProvider>
     </div>
   `,
 });

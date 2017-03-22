@@ -9,7 +9,7 @@ export default Ractive.extend({
     Contact
   },
   template: `
-    {{#if active}}  
+    <NodeRoute>
       <div class="card">
         <header class="card-header">About</header>
         <div class="card-content">
@@ -18,23 +18,15 @@ export default Ractive.extend({
           </div>
         </div>
         <div>
-            <Crew routeNode="about.crew" route="{{route}}"></Crew>
-            <Contact routeNode="about.contact" route="{{route}}"></Contact>
+            <Crew routeNode="about.crew"></Crew>
+            <Contact routeNode="about.contact"></Contact>
         </div>
       </div>
-    {{/if}}
+    </NodeRoute>
   `,
-  data(){
-    return {
-      active: false
-    };
-  },
   oninit() {
     console.log('About Init');
 
-    this.observe('route', (route) => {
-      this.set('active', route && route.name.indexOf(this.get('routeNode')) === 0);
-    });
   },
   oncomplete() {
     console.log('About Complete');
