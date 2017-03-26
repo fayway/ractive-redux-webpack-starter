@@ -1,9 +1,9 @@
 import Ractive from 'ractive';
 
-const NodeRoute = Ractive.extend({
+export default Ractive.extend({
   template: `
     {{#if active}}
-      {{>content}}
+      {{yield}}
     {{/if}}
   `,
   data(){
@@ -12,18 +12,8 @@ const NodeRoute = Ractive.extend({
     };
   },
   oninit() {
-    console.log('NodeRoute Init');
-
     this.observe('route', (route) => {
       this.set('active', route && route.name.indexOf(this.get('routeNode')) === 0);
     });
-  },
-  oncomplete() {
-    console.log('NodeRoute Complete');
-
   }
 });
-
-Ractive.components.NodeRoute = NodeRoute;
-
-export default NodeRoute;

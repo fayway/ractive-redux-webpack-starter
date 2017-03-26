@@ -23,13 +23,5 @@ export default Ractive.extend({
         </div>
       </div>
     </NodeRoute>
-  `,
-  oninit() {
-    console.log('About Init');
-
-  },
-  oncomplete() {
-    console.log('About Complete');
-
-  }
+  `
 });

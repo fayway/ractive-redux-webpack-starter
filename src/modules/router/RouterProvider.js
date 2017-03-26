@@ -1,7 +1,9 @@
 import Ractive from 'ractive';
+import BaseLink from './BaseLink';
+import NodeRoute from './NodeRoute';
 
-import createRouter from './createRouter';
-import './NodeRoute';
+Ractive.components.BaseLink = BaseLink;
+Ractive.components.NodeRoute = NodeRoute;
 
 export default Ractive.extend({
   data() {
@@ -13,17 +15,18 @@ export default Ractive.extend({
       {{>content}}
   `,
   oninit() {
-    console.log('RouterProvider Init');
+    this.router = this.get('router');
 
-    this.router = createRouter(this.get('routes'), 'home', true);
-
-    this.router.addListener((toState) => {
+    this.mapRouteStateToData = (toState) => {
       this.set('route', toState);
-    });
+    };
+
+    this.router.addListener(this.mapRouteStateToData);
   },
   oncomplete(){
-    console.log('RouterProvider Complete');
-
     this.router.start();
+  },
+  onteardown() {
+    this.router.removeListener(this.mapRouteStateToData);
   }
 });

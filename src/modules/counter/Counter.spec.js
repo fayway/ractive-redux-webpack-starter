@@ -30,6 +30,11 @@ describe('Counter Component', () => {
       it('should dispatch createIncrementAction', (done) => {
         new CounterComponent({
           el: this.container,
+          data(){
+            return {
+              active: true,
+            };
+          },
           oncomplete() {
             const incButton = this.find('[role=inc]');
             incButton.click();
@@ -44,6 +49,11 @@ describe('Counter Component', () => {
       it('should dispatch createDecrementAction', (done) => {
         new CounterComponent({
           el: this.container,
+          data(){
+            return {
+              active: true,
+            };
+          },
           oncomplete() {
             const decButton = this.find('[role=dec]');
             decButton.click();
@@ -59,6 +69,11 @@ describe('Counter Component', () => {
     it('should be updated according to Inc/Dec clicks', (done) => {
       new CounterComponent({
         el: this.container,
+        data(){
+          return {
+            active: true,
+          };
+        },
         oncomplete() {
           const incButton = this.find('[role=inc]');
           const decButton = this.find('[role=dec]');

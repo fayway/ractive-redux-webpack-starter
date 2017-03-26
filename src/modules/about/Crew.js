@@ -7,13 +7,5 @@ export default Ractive.extend({
           <div class="alert alert-info">The Crew</div>
       </div>
     </NodeRoute>
-  `,
-  oninit() {
-    console.log('About Crew Init');
-
-  },
-  oncomplete() {
-    console.log('About Crew Complete');
-
-  }
+  `
 });

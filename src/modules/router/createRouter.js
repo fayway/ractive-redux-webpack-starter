@@ -5,10 +5,10 @@ import browserPlugin from 'router5/plugins/browser';
 
 export default function configureRouter(routes, useListenersPlugin = false) {
   const defaultRouteConf = routes.find(route => route.default === true);
+
   const router = createRouter(routes, {
-    defaultRoute: defaultRouteConf ? defaultRouteConf.name : undefined
-  })
-  // Plugins
+      defaultRoute: defaultRouteConf ? defaultRouteConf.name : undefined,
+    })
     .usePlugin(loggerPlugin)
     .usePlugin(browserPlugin({
       useHash: true

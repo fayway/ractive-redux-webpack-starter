@@ -26,13 +26,5 @@ export default Ractive.extend({
       name: 'Rich Harris',
       message: 'The Guardian of the DOM'
     };
-  },
-  oninit() {
-    console.log('About Contact Init');
-
-  },
-  oncomplete() {
-    console.log('About Contact Complete');
-
   }
 });
