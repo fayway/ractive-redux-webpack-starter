@@ -1,4 +1,4 @@
-import {describe, it, before, beforeEach, afterEach} from 'mocha';
+import {describe, it, before, after, beforeEach, afterEach} from 'mocha';
 import {expect} from 'chai';
 import sinon from 'sinon';
 import Ractive from 'ractive';
@@ -15,6 +15,9 @@ describe('Counter Component', () => {
     this.container = document.createElement('div');
   });
 
+  after(() => {
+    this.container.remove();
+  });
 
   describe('Clicks/Actions Bindings', () => {
 
