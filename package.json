@@ -8,7 +8,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js -p",
     "test": "cross-env NODE_ENV=test mocha-webpack --opts config/test/mocha-webpack.opts",
     "test:watch": "npm test -- --watch",
-    "cover": "cross-env NODE_ENV=coverage nyc --reporter=lcov --reporter=text npm run test"
+    "cover": "cross-env NODE_ENV=coverage nyc --reporter=lcov --reporter=text mocha-webpack --opts config/test/mocha-webpack.coverage.opts"
   },
   "nyc": {
     "include": [

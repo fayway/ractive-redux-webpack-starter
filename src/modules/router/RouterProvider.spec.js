@@ -9,7 +9,6 @@ describe('RouterProvider', () => {
 
   before(() => {
     Ractive.DEBUG = false;
-
     this.fakeRouter = {
       callbacks: [],
       addListener(callback){
@@ -20,8 +19,8 @@ describe('RouterProvider', () => {
       },
       start(){
       },
-      notify() {
-        this.callbacks.map(cb => cb());
+      notify(state) {
+        this.callbacks.map(cb => cb(state));
       }
     };
 
@@ -45,7 +44,7 @@ describe('RouterProvider', () => {
   });
 
   it('should listen to route change and start the router', (done) => {
-    new Ractive({
+    const container = new Ractive({
       el: this.container,
       components: {
         RouterProvider
@@ -57,6 +56,13 @@ describe('RouterProvider', () => {
       oncomplete: () => {
         expect(this.fakeRouter.addListener.calledOnce).to.be.true;
         expect(this.fakeRouter.start.calledOnce).to.be.true;
+
+        const sut = container.findComponent('RouterProvider');
+        const fakeState = {name: 'home'};
+        sinon.spy(sut, 'set');
+        this.fakeRouter.notify(fakeState);
+        expect(sut.set.withArgs('route', fakeState).calledOnce).to.be.true;
+        sut.set.restore();
         done();
       }
     })

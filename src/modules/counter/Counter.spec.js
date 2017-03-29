@@ -7,11 +7,12 @@ import store from 'store/appStore';
 import CounterComponent from './Counter';
 import {createIncrementAction, createDecrementAction} from './actions';
 
-
 describe('Counter Component', () => {
 
   before(() => {
     Ractive.DEBUG = false;
+    Ractive.components.NodeRoute = Ractive.extend({template: '{{yield}}'});
+
     this.container = document.createElement('div');
   });
 
