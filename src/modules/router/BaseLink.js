@@ -13,9 +13,19 @@ export default Ractive.extend({
       ignoreQueryParams: true
     };
   },
+  getRouter() {
+    const routerProvider = this.findParent('RouterProvider');
+    if (!routerProvider) {
+      throw new Error('BaseLink Component must be placed with a RouterProvider Component');
+    }
+    const router = routerProvider.get('router');
+    if (!router) {
+      throw new Error('RouterProvider Component must provide a valid router5 object');
+    }
+    return router;
+  },
   oninit() {
-
-    this.router = this.findParent('RouterProvider').get('router');
+    this.router = this.getRouter();
 
     const path = this.router.buildPath(this.get('routeName'), this.get('routeParams'));
     this.set('path', `/#${path}`);
