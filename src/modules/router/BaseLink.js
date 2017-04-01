@@ -18,11 +18,7 @@ export default Ractive.extend({
     if (!routerProvider) {
       throw new Error('BaseLink Component must be placed with a RouterProvider Component');
     }
-    const router = routerProvider.get('router');
-    if (!router) {
-      throw new Error('RouterProvider Component must provide a valid router5 object');
-    }
-    return router;
+    return routerProvider.get('router');
   },
   oninit() {
     this.router = this.getRouter();
@@ -37,6 +33,7 @@ export default Ractive.extend({
       this.set('linkClassName', linkClassName);
     };
 
+    this.set('linkClassName', this.get('className'));
     this.router.addListener(this.isActive);
   },
   onteardown() {
